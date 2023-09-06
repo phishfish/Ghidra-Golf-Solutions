@@ -1,1 +1,3 @@
-println("Hello world!")
+def run():
+    println("Hello world!")
+    pass
