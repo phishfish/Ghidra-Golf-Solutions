@@ -1,16 +1,16 @@
 import ghidra.app.script.GhidraScript;
 
-public class solve_2 extends GhidraScript {
+public class Metadata extends GhidraScript {
 
     @Override
     public void run() {
 
         /* find the missing function. Replace CHANGEME */
 
-        println(getCurrentProgram().CHANGEME()); // get executable path
+        println(getCurrentProgram().getExecutablePath()); // get executable path
 
-        println(getCurrentProgram().CHANGEME()); // get name
+        println(getCurrentProgram().getName()); // get name
 
-        println(getCurrentProgram().CHANGEME()); // get md5 hash
+        println(getCurrentProgram().getExecutableMD5()); // get md5 hash
     }
 }
