@@ -13,7 +13,9 @@ for func in functions:
 
         refs = ????? # get the references to entryPoint
         """
-
+        entryPoint = func.getEntryPoint()
+        refs = getReferencesTo(entryPoint)
+        
         break
 
 for ref in refs:
