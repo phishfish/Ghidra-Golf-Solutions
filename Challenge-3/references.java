@@ -3,24 +3,26 @@ import ghidra.program.model.listing.*;
 import ghidra.program.model.symbol.*;
 import ghidra.program.model.address.*;
 
-public class solve_3 extends GhidraScript {
+public class References extends GhidraScript {
 
     @Override
     protected void run() throws Exception {
         String functionName = "flag";
         Address entryPoint;
-        Reference[] refs;
+        Reference[] refs = null;
 
         FunctionManager fm = getCurrentProgram().getFunctionManager();
-        Function[] functions = fm.getFunctions(true);
+        FunctionIterator functions = fm.getFunctions(true);
 
         for (Function function : functions) {
-            if function.getName().equals(functionName) {
+            if (function.getName().equals(functionName)) {
                 /*
                 entryPoint = ????; // get the entry point of the function 
 
                 refs = ?????; // get the references to entryPoint
                 */
+            	entryPoint = function.getEntryPoint();
+            	refs = getReferencesTo(entryPoint);
                 break;
             }
         }
